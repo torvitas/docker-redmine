@@ -15,8 +15,9 @@ RUN cd /usr/local/share/gems/gems/rmagick-2.13.3/ext/RMagick && ruby extconf.rb 
 
 RUN cd /var/www/redmine && gem install passenger && /usr/local/bin/passenger-install-apache2-module -a 
 
-COPY httpd.conf/redmine.conf /etc/httpd/conf.d/redmine.conf
-COPY httpd.conf/10-passenger.conf /etc/httpd/conf.modules.d/10-passenger.conf
+COPY httpd/conf/httpd.conf /etc/httpd/conf/httpd.conf
+COPY httpd/conf.d/redmine.conf /etc/httpd/conf.d/redmine.conf
+COPY httpd/conf.modules.d/10-passenger.conf /etc/httpd/conf.modules.d/10-passenger.conf
 
 RUN chown -R 48.48 /var/www/redmine
 
