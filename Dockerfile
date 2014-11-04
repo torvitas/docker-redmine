@@ -17,10 +17,10 @@ RUN cd /var/www/redmine && gem install passenger && /usr/local/bin/passenger-ins
 
 COPY httpd.conf/redmine.conf /etc/httpd/conf.d/redmine.conf
 COPY httpd.conf/10-passenger.conf /etc/httpd/conf.modules.d/10-passenger.conf
-COPY start.sh /start.sh
 
 RUN chown -R 48.48 /var/www/redmine
 
 VOLUME /var/www/redmine/config
 
+COPY start.sh /start.sh
 CMD ["/bin/bash", "/start.sh"]
