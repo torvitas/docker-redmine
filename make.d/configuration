@@ -1,0 +1,15 @@
+DOCKERNAMESPACE = torvitas
+NAMESPACE = docker
+MARIADBCONTAINER = docker-mariadb
+NGINXCONTAINER = docker-nginx
+MYSQLUSER = testdb
+MYSQLPWD = mysqlPassword
+
+NGINXCONFD = /opt/docker/volumes/docker-nginx/conf.d/
+SYSTEMDSERVICEFOLDER = /usr/local/lib/systemd/system/
+DOCKERHOSTVOLUMES = /opt/docker/volumes/
+
+DOCKERPREFIX = $(DOCKERNAMESPACE)/
+DOCKERNAMESPACEPLACEHOLDER = \#\#\#DOCKERNAMESPACE\#\#\#
+NAMESPACEPLACEHOLDER = \#\#\#NAMESPACE\#\#\#
+MARIADBCONTAINERPLACEHOLDER = \#\#\#MARIADBCONTAINER\#\#\#

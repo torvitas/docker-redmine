@@ -1,0 +1,20 @@
+[Unit]
+Description=###NAMESPACE### Redmine Container
+Requires=docker.service
+Requires=###MARIADBCONTAINER###.service
+After=###MARIADBCONTAINER###.service
+
+[Service]
+TimeoutStartSec=0
+Restart=always
+ExecStartPre=-/usr/local/bin/docker-stoprm ###NAMESPACE###-redmine
+ExecStartPre=/usr/bin/docker run    --name ###NAMESPACE###-redmine \
+				    --volumes-from ###NAMESPACE###-redmine-data \
+                                    -d \
+                                    --link ###MARIADBCONTAINER###:db \
+                                    ###DOCKERNAMESPACE###/redmine
+ExecStart=/usr/bin/docker attach ###NAMESPACE###-redmine
+ExecStop=/usr/local/bin/docker-stoprm ###NAMESPACE###-redmine
+
+[Install]
+WantedBy=multi-user.target
