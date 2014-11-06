@@ -6,7 +6,7 @@ MYSQLUSER = testdb
 MYSQLPWD = mysqlPassword
 
 NGINXCONFD = /opt/docker/volumes/docker-nginx/conf.d/
-SYSTEMDSERVICEFOLDER = /usr/local/lib/systemd/system/
+SYSTEMDSERVICEFOLDER = /usr/lib/systemd/system/
 DOCKERHOSTVOLUMES = /opt/docker/volumes/
 
 DOCKERPREFIX = $(DOCKERNAMESPACE)/

@@ -9,7 +9,7 @@ install: systemd-service-folder install-docker-stoprm install-redmine-data
 	sudo sed -i s/$(DOCKERNAMESPACEPLACEHOLDER)/$(DOCKERNAMESPACE)/g $(SYSTEMDSERVICEFOLDER)$(NAMESPACE)-redmine.service
 	sudo sed -i s/$(NAMESPACEPLACEHOLDER)/$(NAMESPACE)/g $(SYSTEMDSERVICEFOLDER)$(NAMESPACE)-redmine.service
 	sudo sed -i s/$(MARIADBCONTAINERPLACEHOLDER)/$(MARIADBCONTAINER)/g $(SYSTEMDSERVICEFOLDER)$(NAMESPACE)-redmine.service
-	sudo systemctl enable $(SYSTEMDSERVICEFOLDER)$(NAMESPACE)-redmine.service
+	sudo systemctl enable $(NAMESPACE)-redmine.service
 
 pull:
 	docker pull torvitas/redmine
