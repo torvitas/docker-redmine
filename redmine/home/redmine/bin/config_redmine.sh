@@ -19,11 +19,7 @@ sed -i s/my_password/$redmine_password/g /home/redmine/database/setupdatabase.sq
 sed -i s/my_password/$redmine_password/g /home/redmine/redmine-2.6.0/config/database.yml
 mysql -h db -u $MYSQLUSER -p$MYSQLPWD < /home/redmine/database/setupdatabase.sql
 
-cd /home/redmine/
-rsync -a redmine-2.6.0/. redmine/
-cd redmine
-chown -R redmine:redmine files log tmp public/plugin_assets
-chmod -R 755 files log tmp public/plugin_assets
+cd /home/redmine/redmine
 rake generate_secret_token
 RAILS_ENV=production rake db:migrate
 REDMINE_LANG=en RAILS_ENV=production rake redmine:load_default_data

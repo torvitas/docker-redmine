@@ -14,7 +14,12 @@ RUN gem install bundler
 RUN cd /home/redmine/redmine/; bundle install --without development test
 RUN cd /home/redmine; gem install puma
 USER root
-RUN cd /home/redmine/redmine-2.6.0; mkdir public/plugin_assets; chown -R redmine:redmine files log tmp public/plugin_assets ../database; chmod -R 755 files log tmp public/plugin_assets; rm /home/redmine/redmine
+RUN cd /home/redmine/redmine-2.6.0; mkdir public/plugin_assets; chown -R redmine:redmine files log tmp public/plugin_assets ../database; chmod -R 755 files log tmp public/plugin_assets
 USER redmine
+VOLUME /home/redmine/redmine/files
+VOLUME /home/redmine/redmine/log
+VOLUME /home/redmine/redmine/config
+VOLUME /home/redmine/redmine/tmp
+VOLUME /home/redmine/redmine/public/plugin_assets
 EXPOSE 9292
 CMD ["/home/redmine/bin/server_puma.sh"]
