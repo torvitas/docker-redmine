@@ -1,4 +1,4 @@
-FROM torvitas/redmine
+FROM torvitas/redmine:base
 MAINTAINER Sascha Marcel Schmidt <docker@saschaschmidt.net>
 
 USER root
