@@ -20,6 +20,8 @@ RUN cd /home/redmine/redmine/plugins/ && git clone https://github.com/iRessource
 
 RUN cd /home/redmine/redmine/plugins/ && git clone https://github.com/phlegx/redmine_gitlab_hook.git
 
+RUN cd /home/redmine/redmine/plugins/ && git clone https://github.com/eskin/redmine_change_issue_author.git
+
 RUN cd /home/redmine/redmine/ && bundle install --without development test
 
 RUN cd /home/redmine/redmine/ && gem install mysql2

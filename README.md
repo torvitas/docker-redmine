@@ -15,5 +15,6 @@ Redmine 2.6.2
    - time logger
    - dmsf
    - agile dwarf
-   - gilab hook
+   - gitlab hook
+   - change issue author
    - mysql2 gem
