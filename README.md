@@ -6,6 +6,7 @@ Redmine 2.6.2
 - Redmine 2.6.2
 - ruby / gem / bundle via rvm
 - puma
+
 # extended
 - base image +
    - bootstrap kit
