@@ -2,12 +2,12 @@ Redmine 2.6.2
 -------------
 
 ### Tags ###
-# base
+#### base
 - Redmine 2.6.2
 - ruby / gem / bundle via rvm
 - puma
 
-# extended
+#### extended
 - base image +
    - bootstrap kit
    - holidays plugin
